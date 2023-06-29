@@ -12,8 +12,12 @@ def createBlankImage(image_shape):
 
 def showImage(image, title="iamge"):
     cv2.imshow(title, image)
-    cv2.waitKey()
+    cv2.waitKey(0)
 
 
 def randomColor():
     return (randint(0, 255), randint(0, 255), randint(0, 255))
+
+def readImage(path, image_size):
+    image = cv2.imread(path)
+    return cv2.resize(image, image_size)
